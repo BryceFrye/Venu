@@ -17,16 +17,16 @@ function getData() {
   }).done(function(data){
 		console.log(data);
 		if (data.error){
-			$("#artist-name").append(data.message+".");
+			$("#notice").append(data.message+".");
 		} else if (data.events.total === "0"){
-			$("#artist-name").append("Sorry, no shows found at this time.");
+			$("#notice").append("Sorry, no shows found at this time.");
 		} else if (data.events["@attr"].artist === artist) {
 			displayData(data.events.event, artist);
 		} else {
-			$("#artist-name").append("Did you mean '"+data.events["@attr"].artist+
-			"', ya dingus?<br /><button id='autocorrect-correct' class='btn btn-success'>You're right, I did mean "+
+			$("#notice").append("Did you mean '"+data.events["@attr"].artist+
+			"', ya dingus?<br /><button id='autocorrect-correct' class='btn'>Yup, show me "+
 			data.events["@attr"].artist+
-			".</button><br /><button id='autocorrect-incorrect' class='btn btn-danger'>No, you're the dingus! Show me shows for "+
+			".</button><button id='autocorrect-incorrect' class='btn'>Nope, I meant "+
 			origArtist+".</button>");
 			$("#autocorrect-correct").click(function(){
 				displayData(data.events.event, data.events["@attr"].artist);
