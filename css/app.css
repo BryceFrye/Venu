@@ -50,6 +50,10 @@ input.form-search{
   padding: 5px;
 }
 
+.btn:hover{
+  color: green;
+}
+
 #submit{
   height: 66px;
   width:120px;
@@ -78,14 +82,14 @@ input.form-search{
 	position: relative;
   font-size: 55px;
   margin: 30px;
-  top: 23px;
+  top: 43px;
 }
 
 #shows{
   margin-left: 100px;
   height:100%;
   position: relative;
-  top: 10px;
+  top: 40px;
   max-width: 855px;
 	text-align: left;
 }
@@ -94,11 +98,11 @@ input.form-search{
   list-style-type: none;
   font-size: 18px;
   line-height: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 #shows li.last{
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .cancelled{
