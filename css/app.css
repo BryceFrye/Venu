@@ -63,7 +63,8 @@ input.form-search{
 }
 
 #main-content{
-  background: url('http://subtlepatterns.com/patterns/lined_paper.png');
+  background-image: url('../images/lined_paper_line.png'), url('../images/lined_paper.png');
+	background-repeat: repeat-y, repeat;
   width: 900px;
   margin: auto;
   box-shadow: 0px 6px 8px grey;
@@ -85,7 +86,7 @@ input.form-search{
   height:100%;
   position: relative;
   top: 10px;
-  width: 855px;
+  max-width: 855px;
 	text-align: left;
 }
 
