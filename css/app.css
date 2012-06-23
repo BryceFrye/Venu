@@ -51,7 +51,7 @@ input.form-search{
 }
 
 #submit{
-  height: 75px;
+  height: 66px;
   width:120px;
   font-size: 24px;
   line-height: 24px;
@@ -65,22 +65,27 @@ input.form-search{
 #main-content{
   background-image: url('../images/lined_paper_line.png'), url('../images/lined_paper.png');
 	background-repeat: repeat-y, repeat;
-  width: 930px;
+  width: 900px;
   margin: auto;
-  box-shadow: 0px 7px 8px grey;
+  box-shadow: 0px 6px 8px grey;
 }
 
 #artist-name {
+  font-family: 'Vollkorn' !important;
+  font-weight: 700;
+  font-style:italic;
+  text-decoration: underline;
 	position: relative;
   font-size: 20px;
   margin: 30px;
+  top: 23px;
 }
 
 #shows{
-  margin-left: 75px;
+  margin-left: 100px;
   height:100%;
   position: relative;
-  top: 15px;
+  top: 10px;
   width: 855px;
 	text-align: left;
 }
@@ -89,7 +94,7 @@ input.form-search{
   list-style-type: none;
   font-size: 18px;
   line-height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .cancelled{

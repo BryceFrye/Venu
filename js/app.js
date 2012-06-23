@@ -51,7 +51,7 @@ function displayData(data, artist) {
 	$("#artist-name").html("");
 	$("#artist-name").append(artist);
 	for (var i = 0; i < data.length; i++) {
-    $('#shows').append('<li id='+i+'>'+data[i].startDate+" "+data[i].venue.name+" "+
+    $('#shows').append('<li id='+i+'>'+data[i].startDate+" at "+data[i].venue.name+" in "+
 		data[i].venue.location.city+ ", "+data[i].venue.location.country+" </li>");
   }
 	sortData(data);
