@@ -86,7 +86,7 @@ input.form-search{
   height:100%;
   position: relative;
   top: 10px;
-  width: 855px;
+  max-width: 855px;
 	text-align: left;
 }
 
