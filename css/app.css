@@ -18,6 +18,7 @@ body{
   font-family: helvetica;
   text-align: center;
 	min-width: 990px;
+	text-shadow: 2px 2px 0 white;
 }
 
 header{
@@ -48,6 +49,7 @@ input.form-search{
   font-size: 24px;
   line-height: 24px;
   padding: 5px;
+  margin-left: 5px;
 }
 
 .btn:hover{
@@ -59,6 +61,8 @@ input.form-search{
   width:120px;
   font-size: 24px;
   line-height: 24px;
+  text-shadow: 2px 2px 0 white;
+  font-weight: bold;
 }
 
 #submit img{
