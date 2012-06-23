@@ -54,6 +54,7 @@ function displayData(data, artist) {
     $('#shows').append('<li id='+i+'>'+data[i].startDate+" at "+data[i].venue.name+" in "+
 		data[i].venue.location.city+ ", "+data[i].venue.location.country+" </li>");
   }
+	$("#shows li:last").addClass("last");
 	sortData(data);
 }
 

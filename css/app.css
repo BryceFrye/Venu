@@ -97,6 +97,10 @@ input.form-search{
   margin-bottom: 30px;
 }
 
+#shows li.last{
+	padding-bottom: 20px;
+}
+
 .cancelled{
 	color: red;
 }
