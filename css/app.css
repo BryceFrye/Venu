@@ -70,6 +70,20 @@ input.form-search{
   margin-left: -5px;
 }
 
+ul.ui-autocomplete{
+	top: -110px;
+	list-style: none;
+	text-align: left;
+	width: 708px;
+	margin: auto;
+	background-color: whitesmoke;
+}
+
+ul.ui-autocomplete li{
+	line-height: 40px;
+	font-size: 32px;
+}
+
 #notice{
 	margin: 50px;
 	font-size: 24px;
