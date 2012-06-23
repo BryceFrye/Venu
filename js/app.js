@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {        
   $('#search-artist input').keypress(function(e) {
     if (e.keyCode === 13) {
       getData();
@@ -69,12 +69,3 @@ function sortData(data){
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
