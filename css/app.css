@@ -76,7 +76,7 @@ input.form-search{
   font-style:italic;
   text-decoration: underline;
 	position: relative;
-  font-size: 20px;
+  font-size: 55px;
   margin: 30px;
   top: 23px;
 }
@@ -96,6 +96,11 @@ input.form-search{
   line-height: 30px;
   margin-bottom: 30px;
 }
+
+#shows li.last{
+  padding-bottom: 20px;
+}
+
 
 .cancelled{
 	color: red;
