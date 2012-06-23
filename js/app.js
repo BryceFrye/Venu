@@ -48,6 +48,7 @@ function getData() {
 }
 
 function displayData(data, artist) {
+	$("#notice").html("");
 	$("#artist-name").html("");
 	$("#artist-name").append(artist);
 	for (var i = 0; i < data.length; i++) {
