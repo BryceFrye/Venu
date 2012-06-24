@@ -88,6 +88,7 @@ input.form-search{
 	background-repeat: repeat-y, repeat;
   width: 900px;
   margin: auto;
+  margin-bottom: 30px;
   box-shadow: 0px 6px 8px grey;
 }
 
@@ -141,3 +142,15 @@ footer ul li{
   color: grey;
   font-size: 16px;
 }
+
+#map-button .btn{
+width: 300px;
+height: 60px;
+margin: 20px 5px 20px 5px;
+font-size: 14px;
+font-weight: bold;
+}
+
+html { height: 100% }
+    body { height: 100%; margin: 0; padding: 0 }
+    #map_canvas { height: 100% }

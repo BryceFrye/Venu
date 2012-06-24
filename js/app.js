@@ -1,10 +1,24 @@
-$(document).ready(function() {        
-  $('#search-artist input').keypress(function(e) {
-    if (e.keyCode === 13) {
+$('#search-artist input').keypress(function(e) {
+  if (e.keyCode === 13) {
       getData();
-    }
-  });  
-});
+  }
+});  
+
+
+function initialize(data) {
+  console.log(data);
+  // for (var i = 0; i < data.length; i++) {    
+    var locationLat = data[0].venue.location['geo:point']['geo:lat'];
+    var locationLong = data[0].venue.location['geo:point']['geo:long'];
+  //}
+  console.log(location);
+  var myOptions = {
+    center: new google.maps.LatLng(locationLat, locationLong),
+    zoom: 5,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
 
 function getData() {
 	$("header").slideUp();    
@@ -47,6 +61,10 @@ function getData() {
   });
 }
 
+function displayMap() {
+  
+}
+
 function displayData(data, artist) {
 	$("#notice").html("");
 	$("#artist-name").html("");
@@ -57,6 +75,10 @@ function displayData(data, artist) {
   }
 	$("#shows li:last").addClass("last");
 	sortData(data);
+	$('#map-button').append("Do you want to see a map for this? <br /><button id='submit' class='btn'>VIEW MAP</button>");
+	$('#map-button .btn').click( function(){
+	  initialize(data);
+	});
 }
 
 function toTitleCase(str){

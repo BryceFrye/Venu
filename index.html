@@ -8,21 +8,27 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 	<header>VENU</header>
+	
 	<div id="intro">Who do you want to see?</div>
 
 	<div id="search-artist" class="input-append">
 	  <input id="appendedInputButton" class= "form-search" size="200" placeholder="eg. Toro Y Moi, Stereolab, MF Doom" type="text">
 	  <button id="submit" class="btn" type="button" onClick="javascript:getData()"><img src='images/search.png'>GO</button>
 	</div>
-
+	
 	<div id="notice"></div>
 	
 	<div id="main-content">
 		<h3 id="artist-name"></h3>
 		<ul id="shows"></ul>
 	</div>
+	
+	<div id="map-button"></div>
+	
+	<div id="map_canvas" style="width:100%; height:100%"></div>
 	
 	<footer>
 	  <ul>
@@ -38,5 +44,6 @@
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJ-g4FwOzAfp6tleKypNcXSKM9-_nYnig&sensor=true">
   </script>
   
+
 </body>
 </html>
