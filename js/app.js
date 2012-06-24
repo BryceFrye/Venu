@@ -50,8 +50,20 @@ function getData() {
   });
 }
 
+function initializeSingle(data){
+   $('#map_canvas').show();
+     var locationLat = data.venue.location['geo:point']['geo:lat'];
+     var locationLong = data.venue.location['geo:point']['geo:long'];
+     var myOptions = {
+        center: new google.maps.LatLng(locationLat, locationLong),
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
+
 function initialize(data) {
-  $('#map_canvas').slideDown();
+  $('#map_canvas').show();
   console.log(data);
   // for (var i = 0; i < data.length; i++) {    
     var locationLat = data[0].venue.location['geo:point']['geo:lat'];
@@ -72,7 +84,7 @@ function displayData(data, artist) {
 	$("#artist-name").html("");
 	$("#artist-name").append(artist);
 	for (var i = 0; i < data.length; i++) {
-    $('#shows').append('<li id='+i+'>'+data[i].startDate+" at "+data[i].venue.name+" in "+
+    $('#shows').append('<li id='+i+'>'+data[i].startDate.substring(0,16)+" at "+data[i].venue.name+" in "+
 		data[i].venue.location.city+ ", "+data[i].venue.location.country+" </li>");
   }
 	$("#shows li:last").addClass("last");
@@ -92,6 +104,10 @@ function displaySingle(data, artist) {
 	data.venue.location.city+ ", "+data.venue.location.country+" </li>");
 	$("#shows li:last").addClass("last");
 	sortData(data);
+	$('#map-button').append("Do you want to see a map for this? <br /><button id='submit' class='btn'>VIEW MAP</button>");
+	$('#map-button .btn').click( function(){
+	  initializeSingle(data);
+	});	
 }
 
 function toTitleCase(str){
