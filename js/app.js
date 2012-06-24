@@ -10,6 +10,7 @@ function getData() {
   $('#artist-name').html("");
 	$('#notice').html("");
   $('#shows').html("");
+  $('#map-button').html("");
 	var origArtist = $('#search-artist input').val();
   var artist = toTitleCase(origArtist);
   $.ajax({
@@ -53,29 +54,44 @@ function getData() {
 function initializeSingle(data){
    $('#map_canvas').show();
      var locationLat = data.venue.location['geo:point']['geo:lat'];
-     var locationLong = data.venue.location['geo:point']['geo:long'];
+     var locationLng = data.venue.location['geo:point']['geo:long'];
+     var myLatlng = new google.maps.LatLng(locationLat, locationLng);
      var myOptions = {
-        center: new google.maps.LatLng(locationLat, locationLong),
-        zoom: 5,
+        center: new google.maps.LatLng(locationLat, locationLng),
+        zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-}
+      var marker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: myLatlng,
+          map: map
+      });
+} 
+
 
 function initialize(data) {
   $('#map_canvas').show();
   console.log(data);
   // for (var i = 0; i < data.length; i++) {    
     var locationLat = data[0].venue.location['geo:point']['geo:lat'];
-    var locationLong = data[0].venue.location['geo:point']['geo:long'];
+    var locationLng = data[0].venue.location['geo:point']['geo:long'];
+    var myLatlng = new google.maps.LatLng(locationLat, locationLng);
   //}
   console.log(location);
   var myOptions = {
-    center: new google.maps.LatLng(locationLat, locationLong),
-    zoom: 5,
+    center: new google.maps.LatLng(locationLat, locationLng),
+    zoom: 3,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  for (var j=0; j < data.length; j++) {
+    var marker = new google.maps.Marker({
+        animation: google.maps.Animation.DROP,
+        position: new google.maps.LatLng(data[j].venue.location['geo:point']['geo:lat'], data[j].venue.location['geo:point']['geo:long']),
+        map: map
+    });
+  }
 }
 
 
@@ -104,7 +120,7 @@ function displaySingle(data, artist) {
 	data.venue.location.city+ ", "+data.venue.location.country+" </li>");
 	$("#shows li:last").addClass("last");
 	sortData(data);
-	$('#map-button').append("Do you want to see a map for this? <br /><button id='submit' class='btn'>VIEW MAP</button>");
+	$('#map-button').append("<h3>Do you want to see a map for this?</h3> <br /><button id='submit' class='btn'>VIEW MAP</button>");
 	$('#map-button .btn').click( function(){
 	  initializeSingle(data);
 	});	
