@@ -1074,21 +1074,6 @@ function initialize(data) {
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 }
 
-function displayData(data, artist) {
-	$("#notice").html("");
-	$("#artist-name").html("");
-	$("#artist-name").append(artist);
-	for (var i = 0; i < data.length; i++) {
-    $('#shows').append('<li id='+i+'>'+data[i].startDate+" at "+data[i].venue.name+" in "+
-		data[i].venue.location.city+ ", "+data[i].venue.location.country+" </li>");
-  }
-	$("#shows li:last").addClass("last");
-	sortData(data);
-	$('#map-button').append("Do you want to see a map for this? <br /><button id='submit' class='btn'>VIEW MAP</button>");
-	$('#map-button .btn').click( function(){
-	  initialize(data);
-	});
-}
 
 function displayData(data, artist) {
 	$("#notice").html("");
